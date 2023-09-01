@@ -1,34 +1,54 @@
-/*
-  This is your site JavaScript code - you can add interactivity!
-*/
+const api = {
+    endpoint: "https://api.openweathermap.org/data/2.5/",
+    key :"d66d141641c711f56fe242cc13e275c7"
+}
+const input = document.querySelector("#input");
+input.addEventListener("keydown", enter) ;
 
-// Print a message in the browser's dev tools console each time the page loads
-// Use your menus or right-click / control-click and choose "Inspect" > "Console"
-console.log("Hello 🌎");
+function enter(e){
+    if (e.keyCode ===13) {
+        getInfo(input.value);
+    }
+}
+async  function getInfo(data){
+    const res = await fetch ( `${api.endpoint}weather?q=${data}&units=metric&appID=${api.key}`);
+   const result = await res.json();
+   displayResult(result);
+   }
+  
+   function displayResult(result) {
+    console.log(result);
+let city = document.querySelector("#city");
+city.textContent=`${result.name}, ${result.sys.country}`;
 
-/* 
-Make the "Click me!" button move when the visitor clicks it:
-- First add the button to the page by following the steps in the TODO 🚧
-*/
-const btn = document.querySelector("button"); // Get the button from the page
-if (btn) { // Detect clicks on the button
-  btn.onclick = function () {
-    // The 'dipped' class in style.css changes the appearance on click
-    btn.classList.toggle("dipped");
-  };
+getOurDate();
+   
+let temperature = document.querySelector("#temperature");
+temperature.innerHTML =`${Math.round(result.main.temp)} <span>°</span>`;
+
+let feelslike = document.querySelector("#feelslike");
+feelslike.innerHTML ="Siente como:" + `${Math.round(result.main.feels_like)} <span>°</span>`;
+
+let conditions = document.querySelector("#conditions");
+conditions.textContent=`${result.weather[0].main}`;
+
+let variation = document.querySelector("#variation");
+variation.innerHTML = "Min:" + `${Math.round(result.main.temp_min)} <span>°</span> Max: ${Math.round(result.main.temp_max)} <span>°</span>`;
 }
 
+function getOurDate(){
+const myDate = new Date ();
+const days=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"];
+const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octobre","Noviembre","Diciembre"];
+let date =days [myDate.getDay()];
+let todayDate = myDate.getDate();
+let month = months[myDate.getMonth()];
+let year = myDate.getFullYear();
+let showDate = document.querySelector("#date");
+showDate.textContent=`${date}`+ " " + `${todayDate}` +" " + `${month}` +" "+ `${year}`;
+}
+ 
 
-// ----- GLITCH STARTER PROJECT HELPER CODE -----
 
-// Open file when the link in the preview is clicked
-let goto = (file, line) => {
-  window.parent.postMessage(
-    { type: "glitch/go-to-line", payload: { filePath: file, line: line } }, "*"
-  );
-};
-// Get the file opening button from its class name
-const filer = document.querySelectorAll(".fileopener");
-filer.forEach((f) => {
-  f.onclick = () => { goto(f.dataset.file, f.dataset.line); };
-});
+
+
