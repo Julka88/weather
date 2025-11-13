@@ -22,7 +22,7 @@ Shows real-time weather by city — temperature, feels-like, condition.
 ✅ Responsive and clean design
 
 
-👩‍💻 **Author:** [JuliaMX]( )
+👩‍💻 **Author:** [JuliaMX](https://sky-weathery.netlify.app )
 📍 Mexico | 📧 [y9984710@yahoo.com](mailto:y9984710@yahoo.com)
 
 ---
@@ -50,6 +50,6 @@ Shows real-time weather by city — temperature, feels-like, condition.
 
 
 
-👩‍💻 **Автор:** [JuliaMX]( )
+👩‍💻 **Автор:** [JuliaMX](https://sky-weathery.netlify.app )
 📍 Мексика | 📧 [y9984710@yahoo.com](mailto:y9984710@yahoo.com)
 
