@@ -6,8 +6,8 @@
 
 ### 🌍 About
 
-A simple and elegant weather app built with **React + Vite**, using the **OpenWeatherMap API**.
-Shows real-time weather by city — temperature, feels-like, condition, and dynamic background.
+A simple and elegant weather app built with ** JavaScript **, using the **OpenWeatherMap API**.
+Shows real-time weather by city — temperature, feels-like, condition.
 
 ### ⚙️ Tech Stack
 
@@ -19,7 +19,6 @@ Shows real-time weather by city — temperature, feels-like, condition, and dyna
 
 ✅ Search by city name
 ✅ Real-time weather info
-✅ Dynamic weather background
 ✅ Responsive and clean design
 
 
@@ -32,8 +31,8 @@ Shows real-time weather by city — temperature, feels-like, condition, and dyna
 
 ### 🌍 О проекте
 
-Простое и красивое приложение на **React + Vite**, которое показывает погоду по городу в реальном времени.
-Использует **OpenWeatherMap API**, а фон меняется в зависимости от погоды.
+Простое и красивое приложение на ** JavaScript **, которое показывает погоду по городу в реальном времени.
+Использует **OpenWeatherMap API** .
 
 ### ⚙️ Технологии
 
@@ -45,7 +44,6 @@ Shows real-time weather by city — temperature, feels-like, condition, and dyna
 
 ✅ Поиск города
 ✅ Текущая температура и ощущаемая
-✅ Динамический фон по погоде
 ✅ Адаптивный минималистичный дизайн
 
 
